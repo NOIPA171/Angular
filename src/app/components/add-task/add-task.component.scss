@@ -1,0 +1,29 @@
+.add-form {
+  margin-bottom: 40px;
+}
+.form-control {
+  display: flex;
+  flex-direction: column;
+  label {
+    margin: 15px 0 10px 0;
+  }
+  &.form-control-check {
+    flex-direction: row;
+    align-items: center;
+    margin: 15px 0 10px 0;
+    label {
+      margin: 0;
+    }
+  }
+}
+.btn {
+  display: block;
+  background-color: black;
+  cursor: pointer;
+  color: white;
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+}
