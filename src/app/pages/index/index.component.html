@@ -1,10 +1,13 @@
 <div class="wrapper">
-  <div class="card">
-    <h3>Table of Contents</h3>
-    <ul>
-      <li *ngFor="let item of list">
-        <a [routerLink]="item.path">{{ item.name }}</a>
-      </li>
-    </ul>
-  </div>
+  <diV class="card-wrapper">
+    <div class="card">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li *ngFor="let item of list">
+          <a [routerLink]="item.path">{{ item.name }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="dots"></div>
+  </diV>
 </div>
