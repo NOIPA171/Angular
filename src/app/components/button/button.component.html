@@ -1,0 +1,7 @@
+<button
+  [class]="['btn', size]"
+  [ngStyle]="{ 'background-color': color }"
+  (click)="btnClick.emit()"
+>
+  <ng-content></ng-content>
+</button>

@@ -3,7 +3,7 @@
   <app-button
     *ngIf="hasRoute('/task-tracker')"
     color="{{ showAddTask ? 'red' : 'green' }}"
-    text="{{ showAddTask ? 'Close' : 'Add' }}"
     (btnClick)="toggleAddTask()"
-  ></app-button>
+    >{{ showAddTask ? "Close" : "Add" }}</app-button
+  >
 </header>
