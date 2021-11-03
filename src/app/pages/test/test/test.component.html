@@ -6,8 +6,19 @@
   </app-content>
   <h3></h3>
   <h3>Setter & Getter</h3>
-  <!-- <input [(ngModel)]="value" type="text" name="value" /> -->
   <app-setter></app-setter>
+  <h3>Parent - Child Interaction Local Variable</h3>
+  <p>
+    Parent :
+    <app-button size="small" (click)="calculator.add()">Add</app-button
+    >{{ " " }}
+    <app-button size="small" (click)="calculator.subtract()"
+      >Subtract</app-button
+    >{{ " " }}
+    <app-button size="small" (click)="calculator.reset()">Reset</app-button>
+  </p>
+  Child :
+  <app-local-var #calculator></app-local-var>
   <!-- <form>
     <label>
       <p>username</p>
