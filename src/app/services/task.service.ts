@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { Task } from '../Task';
+import { Task } from '../interfaces/Task';
 
 const httpOptions = {
   headers: new HttpHeaders({

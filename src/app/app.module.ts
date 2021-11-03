@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { IndexComponent } from './pages/index/index.component';
-import { AboutComponent } from './components/about/about.component';
+import { AboutComponent } from './pages/about/about.component';
 @NgModule({
   declarations: [AppComponent, IndexComponent, AboutComponent],
   imports: [

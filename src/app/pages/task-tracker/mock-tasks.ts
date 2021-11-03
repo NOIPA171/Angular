@@ -1,4 +1,4 @@
-import { Task } from './Task';
+import { Task } from '../../interfaces/Task';
 
 // interface Task and is array => Task[]
 export const TASKS: Task[] = [
