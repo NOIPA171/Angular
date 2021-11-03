@@ -7,6 +7,11 @@ export const routes: Routes = [
   { path: '', component: IndexComponent },
   { path: 'about', component: AboutComponent },
   {
+    path: 'test',
+    loadChildren: () =>
+      import('./pages/test/test.module').then((mod) => mod.TestModule),
+  },
+  {
     path: 'task-tracker',
     loadChildren: () =>
       import('./pages/task-tracker/task-tracker.module').then(
