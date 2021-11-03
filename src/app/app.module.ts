@@ -7,9 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-
+import { IndexComponent } from './pages/index/index.component';
+import { AboutComponent } from './components/about/about.component';
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, IndexComponent, AboutComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
