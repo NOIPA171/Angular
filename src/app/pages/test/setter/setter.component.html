@@ -1,0 +1,5 @@
+<p>Current item: {{ value }}</p>
+<app-button size="small" (btnClick)="addListItem()">Add list item</app-button
+>{{ " " }}
+<app-button size="small" (btnClick)="deleteList()">Clear List</app-button>
+<div *ngFor="let item of list">{{ item }}</div>
