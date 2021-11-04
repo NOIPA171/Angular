@@ -9,4 +9,8 @@ export class TestComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  alertValue(value: string) {
+    alert(value);
+  }
 }

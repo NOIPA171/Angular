@@ -19,6 +19,13 @@
   </p>
   Child :
   <app-local-var #calculator></app-local-var>
+  <h3>Template variables - WIP</h3>
+  <div>
+    <input class="inpt" type="text" #inputItem />{{ " " }}
+    <app-button size="small" (btnClick)="alertValue(inputItem.value)"
+      >Alert input value</app-button
+    >
+  </div>
   <!-- <form>
     <label>
       <p>username</p>
