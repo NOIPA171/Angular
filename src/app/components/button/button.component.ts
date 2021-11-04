@@ -8,6 +8,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class ButtonComponent {
   @Input() color = '#000';
   @Input() size = 'default';
+  @Input() type = 'button';
+  @Input() disabled?: boolean;
   @Output() btnClick = new EventEmitter();
   constructor() {}
 }

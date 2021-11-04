@@ -1,0 +1,41 @@
+use <code>#form="ngForm"</code> to get NgForm object
+<div class="wrapper-content">
+  <form #form="ngForm" (ngSubmit)="submit()">
+    <p>
+      <label for="account">Account : </label>
+      <input
+        type="email"
+        name="account"
+        id="account"
+        required
+        pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b"
+        #accountNgModel="ngModel"
+        [ngModel]="account"
+        (ngModelChange)="
+          accountValChange(accountNgModel.value, accountNgModel.errors)
+        "
+      />
+    </p>
+    <p class="error-message">{{ accountErrorMsg }}</p>
+    <p>
+      <label for="password">Password : </label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        required
+        #passwordNgModel="ngModel"
+        [minlength]="8"
+        [maxlength]="16"
+        [ngModel]="password"
+        (ngModelChange)="
+          passwordValChange(passwordNgModel.value, passwordNgModel.errors)
+        "
+      />
+    </p>
+    <p class="error-message">{{ passwordErrorMsg }}</p>
+    <app-button type="submit" [disabled]="form.invalid || false"
+      >Submit</app-button
+    >
+  </form>
+</div>

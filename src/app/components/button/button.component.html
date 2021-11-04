@@ -1,6 +1,8 @@
 <button
   [class]="['btn', size]"
   [ngStyle]="{ 'background-color': color }"
+  [type]="type"
+  [disabled]="disabled"
   (click)="btnClick.emit()"
 >
   <ng-content></ng-content>

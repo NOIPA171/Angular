@@ -18,6 +18,11 @@ export const routes: Routes = [
         (mod) => mod.TaskTrackerModule
       ),
   },
+  {
+    path: 'forms',
+    loadChildren: () =>
+      import('./pages/forms/forms.module').then((mod) => mod.FormsModule),
+  },
 ];
 
 @NgModule({
