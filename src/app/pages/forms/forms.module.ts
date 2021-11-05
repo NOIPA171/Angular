@@ -3,17 +3,23 @@ import { CommonModule } from '@angular/common';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { RouterModule } from '@angular/router';
 import { DesignsystemModule } from 'src/app/components/designsystem.module';
-import { FormsModule as NgFormsModule } from '@angular/forms';
+import {
+  FormsModule as NgFormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import { ReactiveComponent } from './reactive/reactive.component';
 
 @NgModule({
-  declarations: [TemplateDrivenComponent],
+  declarations: [TemplateDrivenComponent, ReactiveComponent],
   imports: [
     CommonModule,
     DesignsystemModule,
     NgFormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild([
+      { path: '', component: ReactiveComponent },
       {
-        path: '',
+        path: 'template',
         component: TemplateDrivenComponent,
       },
     ]),

@@ -1,0 +1,61 @@
+<div class="wrapper-content">
+  <h3>Form1 : single form control</h3>
+  <form>
+    <label for="name">Name : </label>
+    <p>{{ name.value }}</p>
+    <p><input class="inpt" type="text" id="name" [formControl]="name" /></p>
+    <app-button (click)="updateName()">Update Name</app-button>
+  </form>
+  <!-- ------ -->
+  <h3>Form2 : form group</h3>
+  ProfileForm Status: {{ profileForm.status }}
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <p>
+      <label for="first-name">First Name: </label>
+      <input
+        class="inpt"
+        id="first-name"
+        type="text"
+        formControlName="firstName"
+      />
+    </p>
+    <p>{{ getErrorMsg(lastNameControl) }}</p>
+    <p>
+      <label for="last-name">Last Name: </label>
+      <input
+        class="inpt"
+        id="last-name"
+        type="text"
+        formControlName="lastName"
+      />
+    </p>
+    <div formGroupName="address">
+      <h4>Address</h4>
+      <p>
+        <label for="street">Street: </label>
+        <input class="inpt" id="street" type="text" formControlName="street" />
+      </p>
+      <p>
+        <label for="city">City: </label>
+        <input class="inpt" id="city" type="text" formControlName="city" />
+      </p>
+    </div>
+    <h4>Aliases</h4>
+    <ng-container formArrayName="aliases">
+      <p *ngFor="let alias of aliases.controls; let i = index">
+        <label for="alias-{{ i }}">Alias:</label>
+        <input
+          class="inpt"
+          id="alias-{{ i }}"
+          type="text"
+          [formControlName]="i"
+        />
+      </p>
+    </ng-container>
+    <app-button (click)="updateProfile()">Update Profile</app-button>{{ " " }}
+    <app-button (click)="addAlias()">Add Alias</app-button>{{ " " }}
+    <app-button type="submit" [disabled]="!profileForm.valid"
+      >Submit</app-button
+    >
+  </form>
+</div>
