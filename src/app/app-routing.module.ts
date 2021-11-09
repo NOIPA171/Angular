@@ -23,6 +23,13 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./pages/forms/forms.module').then((mod) => mod.FormsModule),
   },
+  {
+    path: 'template-content',
+    loadChildren: () =>
+      import('./pages/template-content/template-content.module').then(
+        (mod) => mod.TemplateContentModule
+      ),
+  },
 ];
 
 @NgModule({

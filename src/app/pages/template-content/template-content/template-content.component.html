@@ -1,0 +1,43 @@
+<div class="wrapper-content">
+  <h3>content projection</h3>
+  <app-multi-slot>
+    <div left>This will show in slot left</div>
+    <div right>This will show in slot right</div>
+    <div something-random>Anything else that doesn't match will show here</div>
+  </app-multi-slot>
+  <h3>template</h3>
+  from
+  <a href="https://ithelp.ithome.com.tw/articles/10205829">this article</a>
+  <p><code>$implicit</code> 固定用法 + ng-template 加上 <code>let-xxx</code></p>
+  <p>ng-template would show here:</p>
+  <div *ngTemplateOutlet="data; context: { $implicit: { value: 1 } }"></div>
+  <p>多個參數</p>
+  <p>傳入其他的參數 + ng-template 加上 <code>let-xxx="參數名"</code></p>
+  <div
+    *ngTemplateOutlet="
+      data;
+      context: { $implicit: { value: 1 }, another: { value: 2 } }
+    "
+  ></div>
+  <h3>Carousel using template</h3>
+  <div *ngTemplateOutlet="displayPage"></div>
+  <button (click)="next()">Next</button>
+  <h3>Using with ContentChild</h3>
+  <app-single-slot>
+    Show! <br />
+    <ng-template appTemplateRef
+      >This is content child in ng-template with ref</ng-template
+    >
+  </app-single-slot>
+</div>
+
+<!-- === for ng-templates === -->
+
+<ng-template #data let-input let-another="another">
+  <div>input: {{ input | json }}</div>
+  <div *ngIf="another">other: {{ another | json }}</div></ng-template
+>
+
+<ng-template appTemplateRef> Page 1 </ng-template>
+<ng-template appTemplateRef> Page 2 </ng-template>
+<ng-template appTemplateRef> Page 3 </ng-template>

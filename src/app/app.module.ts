@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './pages/index/index.component';
 import { AboutComponent } from './pages/about/about.component';
+import { TemplateRefModule } from './directives/template-ref.module';
 @NgModule({
   declarations: [AppComponent, IndexComponent, AboutComponent],
   imports: [
@@ -17,6 +18,7 @@ import { AboutComponent } from './pages/about/about.component';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
+    TemplateRefModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

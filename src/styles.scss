@@ -8,6 +8,11 @@ body {
 body {
   font-family: "Raleway", sans-serif;
 }
+code {
+  background: rgba(92, 92, 92, 0.2);
+  border-radius: 3px;
+  padding: 3px 5px;
+}
 .container {
   max-width: 680px;
   margin: 0 auto;
