@@ -5,7 +5,6 @@ const valuesList = ['A', 'B', 'C'];
 @Component({
   selector: 'app-setter',
   templateUrl: './setter.component.html',
-  styleUrls: ['./setter.component.scss'],
 })
 export class SetterComponent implements OnInit {
   // add count to title for string display

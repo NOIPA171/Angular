@@ -6,10 +6,15 @@ import { TestComponent } from './test/test.component';
 import { RouterModule } from '@angular/router';
 import { ContentComponent } from './content/content.component';
 import { SetterComponent } from './setter/setter.component';
-import { LocalVarComponent } from './local-var/local-var.component';
+import { LocalVarComponent } from './local-var.component';
 
 @NgModule({
-  declarations: [TestComponent, ContentComponent, SetterComponent, LocalVarComponent],
+  declarations: [
+    TestComponent,
+    ContentComponent,
+    SetterComponent,
+    LocalVarComponent,
+  ],
   imports: [
     CommonModule,
     DesignsystemModule,
