@@ -13,7 +13,7 @@ import { TemplateRefModule } from './directives/template-ref.module';
 @NgModule({
   declarations: [AppComponent, IndexComponent, AboutComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
