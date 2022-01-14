@@ -30,6 +30,11 @@ export const routes: Routes = [
         (mod) => mod.TemplateContentModule
       ),
   },
+  {
+    path: 'routing',
+    loadChildren: () =>
+      import('./pages/routing/routing.module').then((m) => m.RoutingModule),
+  },
 ];
 
 @NgModule({
