@@ -35,6 +35,18 @@
       "day": "qwer",
       "reminder": false,
       "id": 7
+    },
+    {
+      "text": "dfdfdf",
+      "day": "dfdfdf",
+      "reminder": false,
+      "id": 8
+    },
+    {
+      "text": "dfd",
+      "day": "dfdfd",
+      "reminder": false,
+      "id": 9
     }
   ],
   "products": []

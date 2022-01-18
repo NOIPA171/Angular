@@ -7,42 +7,21 @@ import {
   HttpResponse,
   HttpErrorResponse,
 } from '@angular/common/http';
-import { Observable, of, throwError } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 import { makeStateKey, TransferState } from '@angular/platform-browser';
 
-const isLoggedIn = false;
-
 @Injectable()
-export class ApiInterceptor implements HttpInterceptor {
+export class ServerApiInterceptor implements HttpInterceptor {
   constructor(private transferState: TransferState) {}
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    const key = makeStateKey(req.url);
-    const storedResponse: string | null =
-      this.transferState.get(key, null) || null;
-
-    if (storedResponse) {
-      const response = new HttpResponse({ body: storedResponse, status: 200 });
-      // this.transferState.remove(key);
-      return of(response);
-    }
-
-    let newReq = req.clone();
-    if (isLoggedIn) {
-      newReq = req.clone({
-        setHeaders: {
-          Authorization: `Bearer your_token`,
-        },
-      });
-    }
-
-    return next.handle(newReq).pipe(
+    return next.handle(req).pipe(
       tap((event: HttpEvent<any>) => {
         if (event instanceof HttpResponse) {
-          if (event.body.header && event.body.header.status !== 'OK') {
+          if (event.body.header?.status && event.body.header.status !== 'OK') {
             throw new HttpErrorResponse({
               error: 'your error',
               headers: event.headers,
@@ -51,7 +30,8 @@ export class ApiInterceptor implements HttpInterceptor {
               url: event.url || undefined,
             });
           } else {
-            // return event.body.body;
+            this.transferState.set(makeStateKey(req.url), event.body);
+            return event;
           }
         }
         return event;

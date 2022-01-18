@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../../../../interfaces/Task';
 import { TaskService } from '../../../../services/task.service';
+import { makeStateKey, TransferState } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-tasks',
@@ -8,7 +9,10 @@ import { TaskService } from '../../../../services/task.service';
 })
 export class TasksComponent implements OnInit {
   tasks: Task[] = [];
-  constructor(private taskService: TaskService) {}
+  constructor(
+    private taskService: TaskService,
+    private transferState: TransferState
+  ) {}
 
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((res) => (this.tasks = res));

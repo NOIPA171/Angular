@@ -13,7 +13,7 @@ export class TestSSRComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.postGetData().subscribe({
       next: (res) => {
-        console.log('res', res);
+        // console.log('res', res);
         this.data = res;
       },
       error: (err) => {

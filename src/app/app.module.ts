@@ -24,7 +24,7 @@ import { TemplateRefModule } from './directives/template-ref.module';
     HttpClientModule,
     FormsModule,
     TemplateRefModule,
-    TransferHttpCacheModule,
+    BrowserTransferStateModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true },
