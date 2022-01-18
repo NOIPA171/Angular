@@ -35,6 +35,7 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./pages/routing/routing.module').then((m) => m.RoutingModule),
   },
+  { path: 'testSSR', loadChildren: () => import('./pages/test-ssr/test-ssr.module').then(m => m.TestSSRModule) },
 ];
 
 @NgModule({
