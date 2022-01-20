@@ -45,10 +45,14 @@
   ul {
     padding: 0;
     margin-bottom: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(6, auto);
     li {
       list-style-type: none;
-      text-align: center;
+      // text-align: center;
       text-transform: capitalize;
+      margin: 0 5px;
       a {
         text-decoration: none;
         color: white;
