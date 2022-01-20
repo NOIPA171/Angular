@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="7097279448292776948" datatype="html">
+        <source>This needs to be translated</source>
+        <target>這需要翻譯</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/test-i18n/test-i18n.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="i18n-meta-desc" datatype="html">
+        <source> You can give meaning | description @@ID to the meta
+</source>
+        <target>可以帶 意思 | 定義 @@ID 給 meta</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/test-i18n/test-i18n.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+        <note priority="1" from="description">i18n meta descriptions</note>
+        <note priority="1" from="meaning">What you can do</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
