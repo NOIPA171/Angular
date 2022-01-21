@@ -123,11 +123,11 @@
             "outputPath": "dist/angular/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
-            "inlineStyleLanguage": "scss",
-            "localize": true
+            "inlineStyleLanguage": "scss"
           },
           "configurations": {
             "production": {
+              "localize": true,
               "outputHashing": "media",
               "fileReplacements": [
                 {
