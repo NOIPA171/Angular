@@ -17,8 +17,12 @@
       "sourceRoot": "src",
       "prefix": "app",
       "i18n": {
+        "sourceLocale": "en",
         "locales": {
-          "tw": { "translation": "src/locale/messages.zh.Hant.xlf" }
+          "tw": {
+            "translation": "src/locale/messages.zh.Hant.xlf",
+            "baseHref": "/tw/"
+          }
         }
       },
       "architect": {
@@ -26,6 +30,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "localize": true,
+            "aot": true,
             "outputPath": "dist/angular/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -38,7 +43,7 @@
           },
           "configurations": {
             "en": {
-              "localize": ["en-US"]
+              "localize": ["en"]
             },
             "tw": {
               "localize": ["tw"]
@@ -118,7 +123,8 @@
             "outputPath": "dist/angular/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
-            "inlineStyleLanguage": "scss"
+            "inlineStyleLanguage": "scss",
+            "localize": true
           },
           "configurations": {
             "production": {

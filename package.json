@@ -10,8 +10,8 @@
     "test": "ng test",
     "server": "json-server --watch db.json --port 5000",
     "dev:ssr": "ng run angular:serve-ssr",
-    "serve:ssr": "node dist/angular/server/main.js",
-    "build:ssr": "ng build && ng run angular:server",
+    "serve:ssr": "node dist/angular/proxy-server.js",
+    "build:ssr": "ng build && ng run angular:server && cp proxy-server.js dist/angular",
     "prerender": "ng run angular:prerender",
     "extract": "ng extract-i18n --output-path=src/locale"
   },
