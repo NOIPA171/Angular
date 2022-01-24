@@ -37,6 +37,7 @@ export const routes: Routes = [
   },
   { path: 'testSSR', loadChildren: () => import('./pages/test-ssr/test-ssr.module').then(m => m.TestSSRModule) },
   { path: 'test-i18n', loadChildren: () => import('./pages/test-i18n/test-i18n.module').then(m => m.TestI18nModule) },
+  { path: 'charts', loadChildren: () => import('./pages/charts/charts.module').then(m => m.ChartsModule) },
 ];
 
 @NgModule({
