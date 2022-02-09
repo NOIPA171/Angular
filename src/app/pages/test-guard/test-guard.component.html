@@ -1,0 +1,12 @@
+<div class="wrapper-content">
+  <h1>Check the pages below</h1>
+  <p>
+    <a routerLink="/test-guard/activate">Activate (not permitted)</a> <br />
+    <a routerLink="/test-guard/activate" [queryParams]="{ name: 'LEO' }">
+      Activate
+    </a>
+  </p>
+  <p>
+    <a routerLink="/test-guard/deactivate"> Deactivate </a>
+  </p>
+</div>
