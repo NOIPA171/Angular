@@ -2,7 +2,7 @@ node version 14.16.1
 
 # Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.
+This is a test project when I was learning Angular, and was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.
 
 ## Development server
 
